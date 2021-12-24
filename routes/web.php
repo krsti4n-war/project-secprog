@@ -31,6 +31,6 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', 'DashboardController@index')->name('home');
-Route::get('/', 'DashboardController@about')->name('about');
-Route::get('/', 'DashboardController@products')->name('products');
-Route::get('/', 'DashboardController@contact')->name('contact');
+Route::get('/about', 'DashboardController@about')->name('about');
+Route::get('/products', 'DashboardController@products')->name('products');
+Route::get('/contact', 'DashboardController@contact')->name('contact');
