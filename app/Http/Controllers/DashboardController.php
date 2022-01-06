@@ -14,22 +14,22 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('home');
+        return view('pages.home');
     }
 
     public function about()
     {
-        return view('about');
+        return view('pages.about');
     }
 
     public function products()
     {
-        return view('products');
+        return view('pages.products');
     }
 
     public function contact()
     {
-        return view('contact');
+        return view('pages.contact');
     }
 
     // public function redirect()
