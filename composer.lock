@@ -4,15 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "content-hash": "e447f4bb326740657ad9d0ceb6747e54",
-=======
     "content-hash": "d4842c22e789d247c4b660e69490545f",
->>>>>>> parent of c3a39ac7 (login and register user and admin in Home, Admin Dashboard)
-=======
-    "content-hash": "3edc0d2499f392d642e37f4e513f8eba",
->>>>>>> parent of 00e88278 (apdet fortify)
     "packages": [
         {
             "name": "asm89/stack-cors",
