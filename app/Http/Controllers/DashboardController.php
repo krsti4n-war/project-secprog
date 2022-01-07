@@ -32,29 +32,4 @@ class DashboardController extends Controller
         return view('contact');
     }
 
-    // public function redirect()
-    // {
-    //     $usertype=Auth::user()->usertype;
-
-    //     if($usertype=='1')
-    //     {
-    //         return view('admin.home');
-    //     }
-
-    //     else
-    //     {
-    //         return view('user.home');
-    //     }
-    // }
-
-    // public function index()
-    // {
-    //     $user_id = auth()->user()->id;
-    //     $user = User::find($user_id);
-
-    //     return view('dashboard')->with('posts', $user->posts);
-    // }
-
 }
-
-
