@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\LoginController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'DashboardController@index')->name('home');
 Route::get('/about', 'DashboardController@about')->name('about');
 Route::get('/products', 'DashboardController@products')->name('products');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+// HomeController diganti LoginController
+route::get('/redirect',[LoginController::class,'redirect']);
