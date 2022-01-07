@@ -27,10 +27,10 @@ class DashboardController extends Controller
         return view('pages.products');
     }
 
-    public function contact()
-    {
-        return view('pages.contact');
-    }
+    // public function contact()
+    // {
+    //     return view('pages.contact');
+    // }
 
     // public function redirect()
     // {
