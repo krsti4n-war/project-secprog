@@ -1,3 +1,4 @@
+<<<<<<< HEAD:resources/views/home.blade.php
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,6 +62,11 @@
     </header>
     <!-- Page Content -->
 
+=======
+@extends('layout.app')
+
+@section('content')
+>>>>>>> pr/2:resources/views/pages/home.blade.php
     <!-- Banner Starts Here -->
     <div class="banner header-text">
         <div class="owl-banner owl-carousel">
@@ -258,6 +264,7 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD:resources/views/home.blade.php
 
 
     <footer>
@@ -301,3 +308,6 @@
 
 </body>
 </html>
+=======
+@endsection('content')
+>>>>>>> pr/2:resources/views/pages/home.blade.php

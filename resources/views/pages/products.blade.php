@@ -1,3 +1,4 @@
+<<<<<<< HEAD:resources/views/products.blade.php
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,7 +60,11 @@
         </div>
       </nav>
     </header>
+=======
+@extends('layout.app')
+>>>>>>> pr/2:resources/views/pages/products.blade.php
 
+@section('content')
     <!-- Page Content -->
     <div class="page-heading products-heading header-text">
       <div class="container">
@@ -212,6 +217,7 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD:resources/views/products.blade.php
 
 
     <footer>
@@ -255,3 +261,6 @@
 
 </body>
 </html>
+=======
+@endsection('content')
+>>>>>>> pr/2:resources/views/pages/products.blade.php
