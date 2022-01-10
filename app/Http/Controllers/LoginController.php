@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\User;
+use App\Models\Product;
 
 class LoginController extends Controller
 {
@@ -21,7 +22,8 @@ class LoginController extends Controller
 
         else
         {
-            return view('pages.home');
+            $a = Product::all();
+            return view('pages.home')->with('products',$a);
         }
     }
 }
