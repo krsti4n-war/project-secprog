@@ -2,13 +2,14 @@
  Project secprog toy-store
 
 https://www.youtube.com/watch?v=6fzsQt6hz6A
+
 https://www.youtube.com/watch?v=842u_KV6B2w
 
 Step to use this code:
-npm install
-npm run dev
-php artisan migrate <-- DATABASE
-php artisan migrate:rollback <-- kalo db nyangkut ditempat lama
+- npm install
+- npm run dev
+- php artisan migrate <-- DATABASE
+- php artisan migrate:rollback <-- kalo db nyangkut ditempat lama
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
