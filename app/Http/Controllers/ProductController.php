@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 use App\Models\Product;
+use App\Models\Cart;
 
 class ProductController extends Controller
 {
@@ -23,5 +26,32 @@ class ProductController extends Controller
         $data->save();
 
         return redirect()->back()->with('message','Product Added Successfully');
+    }
+
+    public function addcart(Request $request, $id)
+    {
+        if(Auth::id())
+        {
+            $user=auth()->user();
+
+            $item=product::find($id);
+
+            $cart=new cart;
+
+            $cart->name=$user->name;
+            $cart->phone = $user->phone;
+            $cart->address = $user->address;
+            $cart->product_title=$item->title;
+            $cart->price=$item->price;
+            $cart->quantity=$request->quantity;
+            $cart->save();
+
+            return redirect()->back();
+        }
+
+        else
+        {
+            return redirect()->route('login');
+        }
     }
 }

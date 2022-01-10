@@ -18,12 +18,9 @@ use App\Http\Controllers\ProductController;
 */
 
 Route::get('/', 'DashboardController@index')->name('home');
-// Route::get('/', 'DashboardController@index')->name('home');
 // route::get('/', [DashboardController::class, 'index']);
 Route::get('/about', 'DashboardController@about')->name('about');
 Route::get('/products', 'DashboardController@products')->name('products');
-Route::get('/uploadproduct', 'DashboardController@uploadproduct')->name('uploadproduct');
-Route::post('/newproduct', 'ProductController@newproduct')->name('newproduct');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -32,4 +29,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 // HomeController diganti LoginController TOLONG DIBACA
 route::get('/redirect',[LoginController::class,'redirect']);
 
-route::post('/shoppingcart/{id}', [LoginController::class, 'addcart']);
+Route::post('/newproduct', 'ProductController@newproduct')->name('newproduct');
+route::post('/addcart/{id}', [ProductController::class, 'addcart']);
+
+Route::get('/adminpanel', 'AdminController@home')->name('adminpanel');
+Route::get('/uploadproduct', 'AdminController@uploadproduct')->name('uploadproduct');

@@ -29,14 +29,14 @@
                     </div>
                 </div>
                 {{-- product --}}
-               
+
                 <div class="col-md-12">
                     <div class="filters-content">
                         <div class="row grid">
                             @if(count($products) > 0)
                             @foreach($products as $item)
                             <div class="col-lg-4 col-md-4 all des">
-                                
+
                                 <div class="product-item">
                                     <a href="#"><img src="/productimage/{{$item->image}}" alt="" style="height:300px;"></a>
                                     <div class="down-content">
@@ -44,8 +44,8 @@
                                         <h6>Rp {{$item->price}}</h6>
                                         <p>{{$item->description}}</p>
                                         <span>quantity ({{$item->quantity}})</span>
-                                
-                                @if(Auth::id())
+
+                                {{-- @if(Auth::id()) --}}
                                         <form action="{{ url('addcart',$item->id) }}" method="POST">
 
                                             @csrf
@@ -57,7 +57,7 @@
                                             <input class="btn btn-primary" type="submit" value="Add to Cart">
 
                                         </form>
-                                    @endif
+                                    {{-- @endif --}}
                                         </div>
                                     </div>
                             </div>

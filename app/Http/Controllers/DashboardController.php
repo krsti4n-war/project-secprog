@@ -19,24 +19,14 @@ class DashboardController extends Controller
         return view('pages.home')->with('products',$a);
     }
 
-    public function about()
-    {
-        return view('pages.about');
-    }
-
     public function products()
     {
         $a = Product::all();
         return view('pages.products')->with('products',$a);
     }
 
-    public function uploadproduct()
+    public function about()
     {
-        return view('pages.uploadproduct');
+        return view('pages.about');
     }
-    // public function contact()
-    // {
-    //     return view('pages.contact');
-    // }
-
 }
