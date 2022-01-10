@@ -29,5 +29,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-// HomeController diganti LoginController
+// HomeController diganti LoginController TOLONG DIBACA
 route::get('/redirect',[LoginController::class,'redirect']);
+
+route::post('/shoppingcart/{id}', [LoginController::class, 'addcart']);

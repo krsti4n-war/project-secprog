@@ -43,17 +43,23 @@
                                         <a href="#"><h4>{{$item->title}}</h4></a>
                                         <h6>Rp {{$item->price}}</h6>
                                         <p>{{$item->description}}</p>
-                                        <ul class="stars">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star-half"></i></li>
-                                        </ul>
                                         <span>quantity ({{$item->quantity}})</span>
-                                    </div>
-                                </div>
                                 
+                                @if(Auth::id())
+                                        <form action="{{ url('addcart',$item->id) }}" method="POST">
+
+                                            @csrf
+
+                                            <input type="number" value="1" min="1" class="form-control" style="width:100px" name="quantity">
+
+                                            <br>
+
+                                            <input class="btn btn-primary" type="submit" value="Add to Cart">
+
+                                        </form>
+                                    @endif
+                                        </div>
+                                    </div>
                             </div>
                             @endforeach
                             @endif
