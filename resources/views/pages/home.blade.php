@@ -35,7 +35,38 @@
                         <a href="products">view all products <i class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
-                <div class="col-md-4">
+
+                {{-- product --}}
+                <div class="col-md-12">
+                    <div class="filters-content">
+                        <div class="row grid">
+                            <div class="col-lg-4 col-md-4 all des">
+                                @if(count($products) > 0)
+                                @foreach($products as $item)
+                                <div class="product-item">
+                                    <a href="#"><img src="/productimage/{{$item->image}}" alt="" style="height:300px;"></a>
+                                    <div class="down-content">
+                                        <a href="#"><h4>{{$item->title}}</h4></a>
+                                        <h6>Rp {{$item->price}}</h6>
+                                        <p>{{$item->description}}</p>
+                                        <ul class="stars">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star-half"></i></li>
+                                        </ul>
+                                        <span>quantity ({{$item->quantity}})</span>
+                                    </div>
+                                </div>
+                                @endforeach
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{-- product --}}
+                {{-- <div class="col-md-4">
                     <div class="product-item">
                         <a href="#"><img src="assets/images/products/product_01.jpg" alt="" style="height:300px;"></a>
                         <div class="down-content">
@@ -145,7 +176,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <div class="call-to-action">
         <div class="container">

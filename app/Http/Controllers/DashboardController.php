@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\User;
+use App\Models\Product;
 
 
 
@@ -14,7 +15,8 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('pages.home');
+        $a = Product::all();
+        return view('pages.home')->with('products',$a);
     }
 
     public function about()
@@ -24,7 +26,8 @@ class DashboardController extends Controller
 
     public function products()
     {
-        return view('pages.products');
+        $a = Product::all();
+        return view('pages.products')->with('products',$a);
     }
 
     public function uploadproduct()
