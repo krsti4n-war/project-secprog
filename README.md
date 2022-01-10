@@ -10,6 +10,8 @@ Step to use this code:
 - npm run dev
 - php artisan migrate <-- DATABASE
 - php artisan migrate:rollback <-- kalo db nyangkut ditempat lama
+- php artisan db:seed <-- default isi DB
+- php artisan migrate:fresh <-- clear isi DB
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
