@@ -32,7 +32,7 @@
           <div class="col-md-6">
             <div class="left-content">
               <h4>Who we are &amp; What we do?</h4>
-              <p>Singkatnya ini tugas dari BUNIS. TAMAT</p>
+              <p>Singkatnya ini tugas dari BUNIS. TAMAT testing</p>
               <ul class="social-icons">
                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
