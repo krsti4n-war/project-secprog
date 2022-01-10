@@ -33,9 +33,10 @@
                 <div class="col-md-12">
                     <div class="filters-content">
                         <div class="row grid">
+                            @if(count($products) > 0)
+                            @foreach($products as $item)
                             <div class="col-lg-4 col-md-4 all des">
-                                @if(count($products) > 0)
-                                @foreach($products as $item)
+                                
                                 <div class="product-item">
                                     <a href="#"><img src="/productimage/{{$item->image}}" alt="" style="height:300px;"></a>
                                     <div class="down-content">
@@ -52,9 +53,10 @@
                                         <span>quantity ({{$item->quantity}})</span>
                                     </div>
                                 </div>
-                                @endforeach
-                                @endif
+                                
                             </div>
+                            @endforeach
+                            @endif
                         </div>
                     </div>
                 </div>
