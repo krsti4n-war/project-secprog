@@ -27,6 +27,10 @@ class DashboardController extends Controller
         return view('pages.products');
     }
 
+    public function uploadproduct()
+    {
+        return view('pages.uploadproduct');
+    }
     // public function contact()
     // {
     //     return view('pages.contact');

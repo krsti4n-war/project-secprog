@@ -7,7 +7,7 @@
             <div class="banner-item-01">
                 <div class="text-content">
                     <h4>Best Toys</h4>
-                    <h2>Mainan lengkap, harga murah</h2>
+                    <h2>Mainan lengkap,<br>harga bersahabat</h2>
                 </div>
             </div>
             <div class="banner-item-02">
@@ -154,11 +154,11 @@
                     <div class="inner-content">
                         <div class="row">
                             <div class="col-md-8">
-                                <h4>Creative &amp; Unique <em>Sixteen</em> Products</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque corporis amet elite author nulla.</p>
+                                <h4><em>Upload</em> Products</h4>
+                                <p>DISINI DULU UPLOAD PRODUCT YE</p>
                             </div>
                             <div class="col-md-4">
-                                <a href="{{ route('products') }}" class="filled-button">Purchase Now</a>
+                                <a href="{{ route('uploadproduct') }}" class="filled-button">UPLOD</a>
                             </div>
                         </div>
                     </div>
