@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    
+
     <div class="container">
         <div class="navigation">
             <ul>
@@ -53,7 +53,7 @@
         <div class="main">
             <div class="topbar">
                 <div class="toggle" onclick="toggleMenu();"></div>
-                <div class="search">
+                {{-- <div class="search"> --}}
                     <label>
                         <input type="text" placeholder="search">
                         <i class="fas fa-search"></i>
@@ -74,28 +74,6 @@
                     </div>
                     <div class="iconBox">
                         <i class="fas fa-users"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="cardBox">
-                <div class="card">
-                    <div>
-                        <div class="numbers">600 B</div>
-                        <div class="cardName">Sales</div>
-                    </div>
-                    <div class="iconBox">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="cardBox">
-                <div class="card">
-                    <div>
-                        <div class="numbers"> $50.000</div>
-                        <div class="cardName">Earnings</div>
-                    </div>
-                    <div class="iconBox">
-                        <i class="fas fa-tags"></i>
                     </div>
                 </div>
             </div> --}}

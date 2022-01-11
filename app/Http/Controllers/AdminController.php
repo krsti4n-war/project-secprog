@@ -12,11 +12,19 @@ class AdminController extends Controller
     //
     public function home()
     {
-        $usertype=Auth::user()->usertype;
-
-        if($usertype=='1')
+        if(Auth::id())
         {
-            return view('admin.home');
+            $usertype=Auth::user()->usertype;
+
+            if($usertype=='1')
+            {
+                return view('admin.home');
+            }
+
+            else
+            {
+                return redirect()->route('home');
+            }
         }
 
         else
@@ -28,11 +36,19 @@ class AdminController extends Controller
 
     public function uploadproduct()
     {
-        $usertype=Auth::user()->usertype;
-
-        if($usertype=='1')
+        if(Auth::id())
         {
-            return view('pages.uploadproduct');
+            $usertype=Auth::user()->usertype;
+
+            if($usertype=='1')
+            {
+                return view('admin.uploadproduct');
+            }
+
+            else
+            {
+                return redirect()->route('home');
+            }
         }
 
         else
