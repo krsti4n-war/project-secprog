@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\User;
+use App\Models\Product;
 
 class AdminController extends Controller
 {
@@ -18,7 +19,8 @@ class AdminController extends Controller
 
             if($usertype=='1')
             {
-                return view('admin.home');
+                $a = Product::all();
+                return view('admin.home')->with('products', $a);;
             }
 
             else

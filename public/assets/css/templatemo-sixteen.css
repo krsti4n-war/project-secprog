@@ -927,6 +927,11 @@ body {
       padding: 15px 0px;
   }
 
+
+  .edit-products {
+    padding-top: 100px;
+    }
+
   /* Responsive Style */
   @media (max-width: 768px) {
       .banner .text-content {
