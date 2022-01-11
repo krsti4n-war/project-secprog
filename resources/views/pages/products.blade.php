@@ -15,7 +15,6 @@
       </div>
     </div>
 
-
     <div class="products">
         <div class="container">
                 <div class="col-md-12">

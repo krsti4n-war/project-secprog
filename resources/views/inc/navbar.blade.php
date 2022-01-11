@@ -19,10 +19,16 @@
                         <li class="nav-item">
                         @if (Route::has('login'))
                             @auth
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('showcart') }}"><i class="fas fa-shopping-cart"></i>Cart[{{ $count }}]</a>
+                                </li>
+
                                 <li class="nav-item">
                                     <x-app-layout>
                                     </x-app-layout>
                                 </li>
+
                             @else
                                 <li><a class="nav-link" href="{{ route('login') }}">Log in</a></li>
                                 @if (Route::has('register'))
@@ -35,4 +41,14 @@
                 </div>
             </div>
       </nav>
+
+    @if(session()->has('message'))
+
+        <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">x</button>
+        {{ session()->get('message') }}
+        </div>
+
+    @endif
+
 </header>

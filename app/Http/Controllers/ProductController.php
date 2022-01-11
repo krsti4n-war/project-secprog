@@ -46,7 +46,7 @@ class ProductController extends Controller
             $cart->quantity=$request->quantity;
             $cart->save();
 
-            return redirect()->back();
+            return redirect()->back()->with('message','Product Added Successfully');
         }
 
         else
@@ -54,4 +54,22 @@ class ProductController extends Controller
             return redirect()->route('login');
         }
     }
+
+    public function showcart()
+    {
+        if (Auth::id())
+        {
+            $user = auth()->user();
+            $cart=cart::where('phone',$user->phone)->get();
+            $count = cart::where('phone', $user->phone)->count();
+
+            return view('pages.showcart', compact('count','cart'));
+        }
+
+        else
+        {
+            return view('pages.showcart');
+        }
+    }
+
 }

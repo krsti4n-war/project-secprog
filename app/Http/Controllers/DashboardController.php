@@ -7,23 +7,65 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Models\Product;
 
+use App\Models\Cart;
+
 
 class DashboardController extends Controller
 {
     public function index()
     {
-        $a = Product::all();
-        return view('pages.home')->with('products',$a);
+        if (Auth::id())
+        {
+
+            $a = Product::all();
+
+            $user = auth()->user();
+            $count = cart::where('phone', $user->phone)->count();
+
+            return view('pages.home',compact('count'))->with('products', $a);
+
+        } 
+
+        else
+        {
+            $a = Product::all();
+            return view('pages.home')->with('products', $a);
+        }
     }
 
     public function products()
     {
-        $a = Product::all();
-        return view('pages.products')->with('products',$a);
+        if (Auth::id()) 
+        {
+
+            $a = Product::all();
+
+            $user = auth()->user();
+            $count = cart::where('phone', $user->phone)->count();
+
+            return view('pages.products', compact('count'))->with('products', $a);
+        }
+
+        else
+        {
+            $a = Product::all();
+            return view('pages.products')->with('products', $a);
+        }
     }
 
     public function about()
     {
-        return view('pages.about');
+        if (Auth::id()) {
+
+            $user = auth()->user();
+            $count = cart::where('phone', $user->phone)->count();
+
+            return view('pages.about', compact('count'));
+        }
+
+        else
+        {
+            return view('pages.about');
+        }
     }
 }

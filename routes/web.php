@@ -31,6 +31,7 @@ route::get('/redirect',[LoginController::class,'redirect']);
 
 Route::post('/newproduct', 'ProductController@newproduct')->name('newproduct');
 route::post('/addcart/{id}', [ProductController::class, 'addcart']);
+Route::get('/showcart', 'ProductController@showcart')->name('showcart');
 
 Route::get('/adminpanel', 'AdminController@home')->name('adminpanel');
 Route::get('/uploadproduct', 'AdminController@uploadproduct')->name('uploadproduct');
