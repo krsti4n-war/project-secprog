@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +18,9 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/', 'DashboardController@index')->name('home');
-// route::get('/', [DashboardController::class, 'index']);
-Route::get('/about', 'DashboardController@about')->name('about');
-Route::get('/products', 'DashboardController@products')->name('products');
+route::get('/', [DashboardController::class, 'index'])->name('home');
+route::get('/about', [DashboardController::class, 'about'])->name('about');
+route::get('/products', [DashboardController::class, 'products'])->name('products');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -29,9 +29,20 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 // HomeController diganti LoginController TOLONG DIBACA
 route::get('/redirect',[LoginController::class,'redirect']);
 
-Route::post('/newproduct', 'ProductController@newproduct')->name('newproduct');
+Route::post('/newproduct', [ProductController::class, 'newproduct']);
 route::post('/addcart/{id}', [ProductController::class, 'addcart']);
-Route::get('/showcart', 'ProductController@showcart')->name('showcart');
+Route::get('/showcart', [ProductController::class, 'showcart']);
+Route::post('/deleteproduct/{id}', [ProductController::class, 'deleteproduct']);
 
-Route::get('/adminpanel', 'AdminController@home')->name('adminpanel');
-Route::get('/uploadproduct', 'AdminController@uploadproduct')->name('uploadproduct');
+Route::get('/adminpanel', [AdminController::class, 'adminpanel'])->name('adminpanel');
+Route::get('/uploadproduct', [AdminController::class, 'uploadproduct'])->name('uploadproduct');
+Route::get('/paymentverification', [AdminController::class, 'paymentverification'])->name('paymentverification');
+
+// Route::get('/', 'DashboardController@index')->name('home');
+// Route::get('/about', 'DashboardController@about')->name('about');
+// Route::get('/products', 'DashboardController@products')->name('products');
+// Route::post('/newproduct', 'ProductController@newproduct')->name('newproduct');
+// Route::get('/showcart', 'ProductController@showcart')->name('showcart');
+// Route::get('/adminpanel', 'AdminController@home')->name('adminpanel');
+// Route::get('/uploadproduct', 'AdminController@uploadproduct')->name('uploadproduct');
+// Route::get('/paymentverification', 'AdminController@paymentverification')->name('paymentverification');

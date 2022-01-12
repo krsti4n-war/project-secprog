@@ -68,8 +68,25 @@ class ProductController extends Controller
 
         else
         {
-            return view('pages.showcart');
+            return redirect()->route('login');
         }
     }
 
+    public function deleteproduct(Request $request, $id)
+    {
+        if(Auth::id())
+        {
+            $user=auth()->user();
+
+            $item=product::find($id);
+            $item->delete();
+
+            return redirect()->back()->with('message','Product Deleted Successfully');
+        }
+
+        else
+        {
+            return redirect()->route('login');
+        }
+    }
 }

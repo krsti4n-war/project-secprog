@@ -20,15 +20,12 @@
                                         <p>{{$item->description}}</p>
                                         <span>quantity ({{$item->quantity}})</span>
 
-                                            {{-- @if(Auth::id()) --}}
-                                            <form action="{{ url('addcart',$item->id) }}" method="POST">
+                                            <form action="{{ url('deleteproduct',$item->id) }}" method="POST">
 
                                                 @csrf
-
                                                 <input class="btn btn-danger" type="submit" value="Delete item">
 
                                             </form>
-                                            {{-- @endif --}}
                                             </div>
                                         </div>
                                 </div>

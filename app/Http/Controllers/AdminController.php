@@ -11,7 +11,7 @@ use App\Models\Product;
 class AdminController extends Controller
 {
     //
-    public function home()
+    public function adminpanel()
     {
         if(Auth::id())
         {
@@ -45,6 +45,29 @@ class AdminController extends Controller
             if($usertype=='1')
             {
                 return view('admin.uploadproduct');
+            }
+
+            else
+            {
+                return redirect()->route('home');
+            }
+        }
+
+        else
+        {
+            return redirect()->route('home');
+        }
+    }
+
+    public function paymentverification()
+    {
+        if(Auth::id())
+        {
+            $usertype=Auth::user()->usertype;
+
+            if($usertype=='1')
+            {
+                return view('admin.paymentverification');
             }
 
             else
