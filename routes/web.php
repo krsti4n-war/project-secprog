@@ -41,7 +41,7 @@ Route::post('/order', [ProductController::class, 'confirmorder']);
 Route::get('/adminpanel', [AdminController::class, 'adminpanel'])->name('adminpanel');
 Route::get('/uploadproduct', [AdminController::class, 'uploadproduct'])->name('uploadproduct');
 Route::get('/paymentverification', [AdminController::class, 'paymentverification'])->name('paymentverification');
-
+Route::get('/uploadpayment', [DashboardController::class, 'uploadpayment'])->name('uploadpayment');
 // Route::get('/', 'DashboardController@index')->name('home');
 // Route::get('/about', 'DashboardController@about')->name('about');
 // Route::get('/products', 'DashboardController@products')->name('products');

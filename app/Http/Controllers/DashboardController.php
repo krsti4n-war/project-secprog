@@ -68,4 +68,20 @@ class DashboardController extends Controller
             return view('pages.about');
         }
     }
+
+    public function uploadpayment()
+    {
+        if (Auth::id()) 
+        {
+            $user = auth()->user();
+            $count = cart::where('phone', $user->phone)->count();
+
+            return view('pages.uploadpayment', compact('count'));
+        }
+
+        else
+        {
+            return view('pages.home');
+        }
+    }
 }
