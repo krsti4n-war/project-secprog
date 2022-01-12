@@ -37,10 +37,32 @@
 
     </table>
 
-    <button class="btn btn-success">Confirm Order</button>
+    <br>
+
+    <button class="btn btn-success">Checkout</button>
 
     </form>
 
 </div>
+
+    <div class="call-to-action">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="inner-content">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h4><em>Upload</em> Bukti Pembayaran</h4>
+                                <p>Silahkan upload foto bukti pembayaran disini</p>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="{{ route('uploadproduct') }}" class="filled-button">UPLOAD</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 @endsection('content')
