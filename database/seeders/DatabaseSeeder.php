@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use App\Models\Product;
 use Illuminate\Database\Seeder;
+// use
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,6 +17,15 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+        User::create([
+            'name' => 'asd',
+            'email' => 'asd@asd.com',
+            'usertype' => '0',
+            'phone' => '123',
+            'address' => 'Rumah Jepri',
+            'password' => bcrypt('asdasd123')
+        ]);
+
         Product::create([
             'title' => 'UNO CARD',
             'price' => '20000',
