@@ -106,6 +106,7 @@ class ProductController extends Controller
         $name=$user->name;
         $phone=$user->phone;
         $address=$user->address;
+        $payid = strval(rand(100000,999999));
 
         foreach($request->productname as $key=>$productname)
         {
@@ -119,13 +120,14 @@ class ProductController extends Controller
             $order->phone=$phone;
             $order->address=$address;
             $order->status='not delivered';
+            $order->payment_id = $payid;
 
             $order->save();
         }
 
         DB::table('carts')->where('phone',$phone)->delete();
 
-        return redirect()->back()->with('message', 'Order Confirmed');;
+        return redirect()->back()->with('message', 'Order Confirmed, Payment id:'.$payid);;
     }
 
 }
