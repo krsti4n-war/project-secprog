@@ -32,6 +32,8 @@ route::get('/redirect',[LoginController::class,'redirect']);
 Route::post('/newproduct', 'ProductController@newproduct')->name('newproduct');
 route::post('/addcart/{id}', [ProductController::class, 'addcart']);
 Route::get('/showcart', 'ProductController@showcart')->name('showcart');
+Route::get('/delete/{id}', 'ProductController@deletecart')->name('deletecart');
+Route::post('/order', 'ProductController@confirmorder')->name('confirmorder');
 
 Route::get('/adminpanel', 'AdminController@home')->name('adminpanel');
 Route::get('/uploadproduct', 'AdminController@uploadproduct')->name('uploadproduct');

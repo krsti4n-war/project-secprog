@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 use App\Models\Product;
 use App\Models\Cart;
+use App\Models\Order;
 
 class ProductController extends Controller
 {
@@ -70,6 +72,42 @@ class ProductController extends Controller
         {
             return view('pages.showcart');
         }
+    }
+
+    public function deletecart($id)
+    {
+        $data=cart::find($id);
+        $data->delete();
+        
+        return redirect()->back()->with('message', 'Product Removed Successfully');;
+    }
+
+    public function confirmorder(Request $request)
+    {
+        $user=auth()->user();
+        $name=$user->name;
+        $phone=$user->phone;
+        $address=$user->address;
+
+        foreach($request->productname as $key=>$productname)
+        {
+            $order=new order;
+
+            $order->product_name=$request->productname[$key];
+            $order->price = $request->price[$key];
+            $order->quantity = $request->quantity[$key];
+
+            $order->name=$name;
+            $order->phone=$phone;
+            $order->address=$address;
+            $order->status='not delivered';
+
+            $order->save();
+        }
+
+        DB::table('carts')->where('phone',$phone)->delete();
+
+        return redirect()->back()->with('message', 'Order Confirmed');;
     }
 
 }
