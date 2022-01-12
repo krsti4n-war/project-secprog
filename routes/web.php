@@ -18,13 +18,15 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-route::get('/', [DashboardController::class, 'index'])->name('home');
-route::get('/about', [DashboardController::class, 'about'])->name('about');
-route::get('/products', [DashboardController::class, 'products'])->name('products');
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+route::get('/', [DashboardController::class, 'index'])->name('home');
+route::get('/about', [DashboardController::class, 'about'])->name('about');
+route::get('/products', [DashboardController::class, 'products'])->name('products');
+Route::get('/uploadpayment', [DashboardController::class, 'uploadpayment'])->name('uploadpayment');
+Route::post('/sendpayment', [DashboardController::class, 'sendpayment']);
 
 // HomeController diganti LoginController TOLONG DIBACA
 route::get('/redirect',[LoginController::class,'redirect']);
@@ -41,7 +43,6 @@ Route::post('/order', [ProductController::class, 'confirmorder']);
 Route::get('/adminpanel', [AdminController::class, 'adminpanel'])->name('adminpanel');
 Route::get('/uploadproduct', [AdminController::class, 'uploadproduct'])->name('uploadproduct');
 Route::get('/paymentverification', [AdminController::class, 'paymentverification'])->name('paymentverification');
-Route::get('/uploadpayment', [DashboardController::class, 'uploadpayment'])->name('uploadpayment');
 // Route::get('/', 'DashboardController@index')->name('home');
 // Route::get('/about', 'DashboardController@about')->name('about');
 // Route::get('/products', 'DashboardController@products')->name('products');

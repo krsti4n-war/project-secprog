@@ -56,7 +56,7 @@
                                 <p>Silahkan upload foto bukti pembayaran disini</p>
                             </div>
                             <div class="col-md-4">
-                                <a href="{{ route('uploadproduct') }}" class="filled-button">UPLOAD</a>
+                                <a href="{{ route('uploadpayment') }}" class="filled-button">UPLOAD</a>
                             </div>
                         </div>
                     </div>

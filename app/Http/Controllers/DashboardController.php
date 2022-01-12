@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\Product;
-
 use App\Models\Cart;
+use App\Models\Payment;
 
 
 class DashboardController extends Controller
@@ -24,7 +24,7 @@ class DashboardController extends Controller
 
             return view('pages.home',compact('count'))->with('products', $a);
 
-        } 
+        }
 
         else
         {
@@ -35,7 +35,7 @@ class DashboardController extends Controller
 
     public function products()
     {
-        if (Auth::id()) 
+        if (Auth::id())
         {
 
             $a = Product::all();
@@ -71,7 +71,7 @@ class DashboardController extends Controller
 
     public function uploadpayment()
     {
-        if (Auth::id()) 
+        if (Auth::id())
         {
             $user = auth()->user();
             $count = cart::where('phone', $user->phone)->count();
@@ -83,5 +83,19 @@ class DashboardController extends Controller
         {
             return view('pages.home');
         }
+    }
+
+    public function sendpayment(Request $request)
+    {
+        $data=new payment;
+
+        $image=$request->file;
+        $imagename=time().'.'.$image->getClientOriginalExtension();
+        $request->file->move('payment_receipt_dir',$imagename);
+        $data->image=$imagename;
+        $data->payment_id=$request->payID;
+        $data->save();
+
+        return redirect()->back()->with('message','Receipt Sended, wait for the admin verification');
     }
 }
