@@ -33,8 +33,10 @@ Route::post('/newproduct', [ProductController::class, 'newproduct']);
 route::post('/addcart/{id}', [ProductController::class, 'addcart']);
 Route::get('/showcart', [ProductController::class, 'showcart']);
 Route::post('/deleteproduct/{id}', [ProductController::class, 'deleteproduct']);
-Route::get('/delete/{id}', 'ProductController@deletecart')->name('deletecart');
-Route::post('/order', 'ProductController@confirmorder')->name('confirmorder');
+Route::get('/delete/{id}', [ProductController::class, 'deletecart']);
+Route::post('/order', [ProductController::class, 'confirmorder']);
+// Route::get('/delete/{id}', 'ProductController@deletecart')->name('deletecart');
+// Route::post('/order', 'ProductController@confirmorder')->name('confirmorder');
 
 Route::get('/adminpanel', [AdminController::class, 'adminpanel'])->name('adminpanel');
 Route::get('/uploadproduct', [AdminController::class, 'uploadproduct'])->name('uploadproduct');

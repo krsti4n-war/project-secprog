@@ -91,7 +91,8 @@ class ProductController extends Controller
             return redirect()->route('login');
         }
     }
-    public function deletecart($id)
+
+    public function deletecart(Request $request, $id)
     {
         $data=cart::find($id);
         $data->delete();
