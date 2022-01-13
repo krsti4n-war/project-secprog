@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Models\User;
 use App\Models\Product;
+use App\Models\Payment;
 
 class AdminController extends Controller
 {
@@ -20,7 +21,7 @@ class AdminController extends Controller
             if($usertype=='1')
             {
                 $a = Product::all();
-                return view('admin.home')->with('products', $a);;
+                return view('admin.home')->with('products', $a);
             }
 
             else
@@ -67,7 +68,9 @@ class AdminController extends Controller
 
             if($usertype=='1')
             {
-                return view('admin.paymentverification');
+                $a = Payment::all();
+
+                return view('admin.paymentverification')->with('products', $a);
             }
 
             else

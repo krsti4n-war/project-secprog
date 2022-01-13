@@ -3,33 +3,35 @@
 
 @section('content')
     <!-- Page Content -->
-    <div class="container-fluid page-body-wrapper">
-        <div class="container" style="align:center">
-            <h1 class="title" style="padding-top: 100px;">Add Product</h1>
+    <div class="col-md-12" style="padding-top: 10vh">
+        <div class="filters-content">
+            <div class="row grid">
+                @if(count($products) > 0)
+                @foreach($products as $item)
+                <div class="col-lg-4 col-md-4 all des">
 
-            <form action="{{ url('newproduct') }}" method="post" enctype="multipart/form-data">
+                    <div class="product-item">
+                        <a href="#"><img src="/payment_receipt_dir/{{$item->image}}" alt="" style="height:300px;"></a>
+                        <div class="down-content">
+                            <a href="#"><h4>{{$item->payment_id}}</h4></a>
+                            {{-- <form action="{{ url('addcart',$item->id) }}" method="POST">
 
-                @csrf
+                                @csrf
 
-                <div style="padding: 15px;">
+                                <input type="number" value="1" min="1" class="form-control" style="width:100px" name="quantity">
 
-                    <label style="display: inline-block;width: 200px;">Product name</label>
-                    <input style="color:black;" type="text" name="title" placeholder="Give a product title" required="">
+                                <br>
+
+                                <input class="btn btn-primary" type="submit" value="Add to Cart">
+
+                            </form> --}}
+                        </div>
+                    </div>
 
                 </div>
-
-                <div style="padding: 15px;">
-
-                    <input type="file" name="file">
-
-                </div>
-
-                <div style="padding: 15px;">
-
-                    <input class="btn btn-success" type="submit">
-
-                </div>
-            </form>
+                @endforeach
+                @endif
+             </div>
         </div>
     </div>
 @endsection('content')
