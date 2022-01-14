@@ -44,7 +44,7 @@
                                         <p>{{$item->description}}</p>
                                         <span>quantity ({{$item->quantity}})</span>
 
-                                {{-- @if(Auth::id()) --}}
+                                @if(Auth::id())
                                         <form action="{{ url('addcart',$item->id) }}" method="POST">
 
                                             @csrf
@@ -56,7 +56,7 @@
                                             <input class="btn btn-primary" type="submit" value="Add to Cart">
 
                                         </form>
-                                    {{-- @endif --}}
+                                    @endif
                                         </div>
                                     </div>
                             </div>

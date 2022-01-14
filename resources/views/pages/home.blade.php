@@ -26,7 +26,7 @@
     </div>
     <!-- Banner Ends Here -->
 
-    <div class="latest-products">
+    {{-- <div class="latest-products">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -34,11 +34,11 @@
                         <h2>Latest Products</h2>
                         <a href="products">view all products <i class="fa fa-angle-right"></i></a>
                     </div>
-                </div>
+                </div> --}}
 
                 {{-- product --}}
 
-                <div class="col-md-12">
+                {{-- <div class="col-md-12">
                     <div class="filters-content">
                         <div class="row grid">
                             @if(count($products) > 0)
@@ -67,28 +67,29 @@
                             @endif
                          </div>
                     </div>
-                </div>
+                </div> --}}
                 {{-- product --}}
+                
     </div>
 
-    {{-- <div class="call-to-action">
+    <div class="call-to-action">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="inner-content">
                         <div class="row">
                             <div class="col-md-8">
-                                <h4><em>Upload</em> Products</h4>
-                                <p>DISINI DULU UPLOAD PRODUCT YE</p>
+                                <h4><em>Our</em> Products</h4>
+                                <p>LIHAT PRODUK KAMI</p>
                             </div>
                             <div class="col-md-4">
-                                <a href="{{ route('uploadproduct') }}" class="filled-button">UPLOD</a>
+                                <a href="{{ route('products') }}" class="filled-button">CHECK</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
 
 @endsection('content')
