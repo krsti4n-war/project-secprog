@@ -14,17 +14,14 @@
                         <a href="#"><img src="/payment_receipt_dir/{{$item->image}}" alt="" style="height:300px;"></a>
                         <div class="down-content">
                             <a href="#"><h4>{{$item->payment_id}}</h4></a>
-                            {{-- <form action="{{ url('addcart',$item->id) }}" method="POST">
+                            <form action="{{ url('addcart',$item->id) }}" method="POST">
 
                                 @csrf
 
-                                <input type="number" value="1" min="1" class="form-control" style="width:100px" name="quantity">
+                                <input class="btn btn-success" type="submit" value="Accepted">
+                                <input class="btn btn-danger" type="delete" value="Reject">
 
-                                <br>
-
-                                <input class="btn btn-primary" type="submit" value="Add to Cart">
-
-                            </form> --}}
+                            </form>
                         </div>
                     </div>
 

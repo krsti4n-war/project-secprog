@@ -92,8 +92,10 @@ class DashboardController extends Controller
         $image=$request->file;
         $imagename=time().'.'.$image->getClientOriginalExtension();
         $request->file->move('payment_receipt_dir',$imagename);
+        $payment_status='pending';
         $data->image=$imagename;
         $data->payment_id=$request->payID;
+        $data->payment_status=$payment_status;
         $data->save();
 
         return redirect()->back()->with('message','Receipt Sended, wait for the admin verification');

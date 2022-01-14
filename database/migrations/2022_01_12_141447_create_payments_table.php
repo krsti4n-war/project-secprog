@@ -17,6 +17,7 @@ class CreatePaymentsTable extends Migration
             $table->id();
             $table->string('payment_id')->nullable();
             $table->string('image');
+            $table->string('payment_status')->nullable();
             $table->timestamps();
         });
     }
