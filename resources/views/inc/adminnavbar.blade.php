@@ -16,6 +16,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('paymentverification') }}">Payment Verification</a>
                         </li>
+
+                        <li class="nav-item">
+                            <x-app-layout>
+                            </x-app-layout>
+                        </li>
                     </ul>
                 </div>
             </div>
