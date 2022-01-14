@@ -35,6 +35,7 @@
                         </div>
                   </div>
             {{-- product --}}
-
+        </div>
+    </div>
     {{-- Footer --}}
 @endsection('content')

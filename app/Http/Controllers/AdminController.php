@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Product;
 use App\Models\Payment;
+use App\Models\Order;
+
 
 class AdminController extends Controller
 {
@@ -68,7 +70,7 @@ class AdminController extends Controller
 
             if($usertype=='1')
             {
-                $a = Payment::all();
+                $a = Payment::select()->where('payment_status','pending')->get();
 
                 return view('admin.paymentverification')->with('products', $a);
             }
@@ -82,6 +84,38 @@ class AdminController extends Controller
         else
         {
             return redirect()->route('home');
+        }
+    }
+
+    public function payacc(Request $request, $id)
+    {
+        if(Auth::id())
+        {
+            $user=auth()->user();
+
+            $payment=Payment::find($id);
+
+            $payment->payment_status='accepted';
+            
+            $order = Order::whereIn('payment_id',$payment)->update(['status'=>'delivered']);
+
+            // $query = Sess::select('order')
+            echo $order;
+            // if ($order->status == "not delivered"){
+            //     $order->status = "delivered";
+            // }
+            $payment->save();
+            // $order->save();
+
+             
+            
+
+            return redirect()->back()->with('message','Payment has been verified');
+        }
+
+        else
+        {
+            return redirect()->route('login');
         }
     }
 }

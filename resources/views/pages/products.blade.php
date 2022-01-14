@@ -66,5 +66,6 @@
                     </div>
                 </div>
                 {{-- product --}}
-
+        </div>
+    </div>
 @endsection('content')
