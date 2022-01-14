@@ -7,8 +7,8 @@
         <div class="row">
           <div class="col-md-12">
             <div class="text-content">
-              <h4>BELI DIBELI</h4>
-              <h2>BELI 1 BAYAR 2, <br>TOLONG INI BUKAN GORENGAN</h2>
+              <h4>DIBELI DIBELI</h4>
+              <h2>BELI 1 BAYAR 2</h2>
             </div>
           </div>
         </div>

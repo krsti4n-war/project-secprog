@@ -13,7 +13,7 @@
             <div class="banner-item-02">
                 <div class="text-content">
                     <h4>Beli Mainan</h4>
-                    <h2>biar si-bocah makin seneng</h2>
+                    <h2>biar anak <br> makin senang </h2>
                 </div>
             </div>
             <div class="banner-item-03">
