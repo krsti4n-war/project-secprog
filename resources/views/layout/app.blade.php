@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="assets/css/templatemo-sixteen.css">
     <link rel="stylesheet" href="assets/css/owl.css">
 
-    <script src="https://kit.fontawesome.com/4488f97f35.js" crossorigin="anonymous"></script>
+
 
   </head>
 
