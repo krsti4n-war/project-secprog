@@ -13,7 +13,6 @@ use App\Models\Order;
 
 class AdminController extends Controller
 {
-    //
     public function adminpanel()
     {
         if(Auth::id())
@@ -62,6 +61,29 @@ class AdminController extends Controller
         }
     }
 
+
+    public function newproduct(Request $request)
+    {
+        $usertype=Auth::user()->usertype;
+
+        if($usertype=='1')
+        {
+            $data=new product;
+
+            $image=$request->file;
+            $imagename=time().'.'.$image->getClientOriginalExtension();
+            $request->file->move('productimage',$imagename);
+            $data->image=$imagename;
+            $data->title=$request->title;
+            $data->price = $request->price;
+            $data->description = $request->des;
+            $data->quantity = $request->quantity;
+            $data->save();
+
+            return redirect()->back()->with('message','Product Added Successfully');
+        }
+    }
+
     public function paymentverification()
     {
         if(Auth::id())
@@ -87,28 +109,30 @@ class AdminController extends Controller
         }
     }
 
-    public function payacc(Request $request, $id)
+
+    public function deleteproduct($id)
+    {
+        $usertype=Auth::user()->usertype;
+
+        if($usertype=='1')
+        {
+            $item=product::find($id);
+            $item->delete();
+
+            return redirect()->back()->with('message','Product Deleted Successfully');
+        }
+    }
+
+    public function payacc($id)
     {
         if(Auth::id())
         {
-            $user=auth()->user();
 
             $payment=Payment::find($id);
-
             $payment->payment_status='accepted';
-            
             $order = Order::whereIn('payment_id',$payment)->update(['status'=>'delivered']);
 
-            // $query = Sess::select('order')
-            echo $order;
-            // if ($order->status == "not delivered"){
-            //     $order->status = "delivered";
-            // }
             $payment->save();
-            // $order->save();
-
-             
-            
 
             return redirect()->back()->with('message','Payment has been verified');
         }

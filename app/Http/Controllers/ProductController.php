@@ -12,24 +12,6 @@ use App\Models\Order;
 
 class ProductController extends Controller
 {
-    public function newproduct(Request $request)
-    {
-
-        $data=new product;
-
-        $image=$request->file;
-        $imagename=time().'.'.$image->getClientOriginalExtension();
-        $request->file->move('productimage',$imagename);
-        $data->image=$imagename;
-        $data->title=$request->title;
-        $data->price = $request->price;
-        $data->description = $request->des;
-        $data->quantity = $request->quantity;
-        $data->save();
-
-        return redirect()->back()->with('message','Product Added Successfully');
-    }
-
     public function addcart(Request $request, $id)
     {
         if(Auth::id())
@@ -74,25 +56,8 @@ class ProductController extends Controller
         }
     }
 
-    public function deleteproduct(Request $request, $id)
-    {
-        if(Auth::id())
-        {
-            $user=auth()->user();
 
-            $item=product::find($id);
-            $item->delete();
-
-            return redirect()->back()->with('message','Product Deleted Successfully');
-        }
-
-        else
-        {
-            return redirect()->route('login');
-        }
-    }
-
-    public function deletecart(Request $request, $id)
+    public function deletecart($id)
     {
         $data=cart::find($id);
         $data->delete();

@@ -20,10 +20,20 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name' => 'testing',
             'email' => 'test@test.com',
-            'usertype' => '0',
+            'usertype' => '1',
             'phone' => '911',
             'address' => 'Test test kena pinjol',
             'password' => bcrypt('t3stD0ang')
+        ]);
+
+
+        User::create([
+            'name' => 'testing2',
+            'email' => 'test2@test2.com',
+            'usertype' => '0',
+            'phone' => '911',
+            'address' => 'Test test kena pinjol',
+            'password' => bcrypt('t3stD0ang2')
         ]);
 
         Product::create([
