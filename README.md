@@ -2,6 +2,8 @@
  Project secprog toy-store
  
 Step to use this code:
+- composer install
+- composer update
 - npm install
 - npm run dev
 - php artisan migrate <-- CREATE DATABASE
